@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orion — AI Voice Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+</head>
+
+<body>
+
+    <div id="bg"></div>
+    <div class="noise"></div>
+
+    <header class="topbar">
+        <div class="logo">ORION<span class="logo-dot">.</span></div>
+        <div class="status-pill" id="statusPill">
+            <span class="status-dot"></span>
+            <span id="statusText">Ready</span>
+        </div>
+        <div class="topbar-right">AI Voice Assistant</div>
+    </header>
+
+    <main class="container">
+
+        <div class="orb-wrapper">
+            <div class="orb-ring ring-3"></div>
+            <div class="orb-ring ring-2"></div>
+            <div class="orb-ring ring-1"></div>
+            <button class="orb" id="talk" aria-label="Activate voice assistant">
+                <div class="orb-inner">
+                    <svg class="mic-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="9" y="2" width="6" height="12" rx="3" fill="currentColor" />
+                        <path d="M5 10a7 7 0 0014 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <line x1="12" y1="19" x2="12" y2="22" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                        <line x1="8" y1="22" x2="16" y2="22" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                    <div class="bars" id="bars">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <div class="hero-text">
+            <h1>ORION</h1>
+            <p class="tagline">Advanced Intelligent Voice Assistant</p>
+        </div>
+
+        <div class="terminal" id="terminal">
+            <div class="terminal-header">
+                <span class="t-dot red"></span>
+                <span class="t-dot yellow"></span>
+                <span class="t-dot green"></span>
+                <span class="t-label">Orion.response</span>
+            </div>
+            <div class="input-container">
+                <input type="text" id="userInput" class="user-input" placeholder="Ask Orion anything...">
+
+                <button id="sendBtn" class="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div class="terminal-body">
+                <span class="prompt">▶</span>
+                <span id="response" class="response-text">Tap the orb and speak a command...</span>
+                <span class="cursor">|</span>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <span class="footer-sep">·</span>
+        <span>Advanced Browser Based AI Assistant</span>
+        <span class="footer-sep">·</span>
+        <span>Interactive Voice Automation System</span>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        VANTA.NET({
+            el: "#bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200,
+            minWidth: 200,
+            scale: 1,
+            scaleMobile: 1,
+            color: 0x00e5ff,
+            backgroundColor: 0x030509,
+            points: 8,
+            maxDistance: 22,
+            spacing: 20
+        });
+    </script>
+</body>
+
+</html>
